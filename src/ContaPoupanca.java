@@ -18,6 +18,7 @@ public class ContaPoupanca extends Conta {
         return this.saldo+this.deposito;
     }
 
+    @Override
     public double getSaldo(){
         return this.saldo + this.taxaDeJuros*this.saldo;
     }

@@ -16,9 +16,10 @@ public class TestaConta {
             System.out.println("Valor máximo de depósito por dia é de R$ " +p1.deposito);
 
             System.out.println("-------------------------------------------------------");
-            ContaSalario cs1 = new ContaSalario(33,3,"Bainco CCC", 1230.00,1230.00,5, 0);
+            ContaSalario cs1 = new ContaSalario(33,3,"Banco CCC", 1230.00,1230.00,5, 0);
             System.out.println("Informações da Conta Salário");
             System.out.println("O saldo da conta é R$ " + cs1.saldo);
             System.out.println("Quantidade de saques disponiveis por mês: " +cs1.getQtdSaque());
+
         }
 }

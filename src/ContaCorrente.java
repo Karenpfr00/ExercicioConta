@@ -24,10 +24,9 @@ public class ContaCorrente extends Conta {
         return this.saldo+this.deposito;
     }
 
+    @Override
     public double getSaldo(){
         return this.chequeEspecial + this.saldo;
-
-
     }
 }
 

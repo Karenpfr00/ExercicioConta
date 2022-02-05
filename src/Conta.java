@@ -6,36 +6,32 @@ public  abstract class Conta {
     protected double saque;
     protected double deposito;
 
-
-    public int getNumero() {
-        return numero;
+    public Conta(int numero, int agencia, String banco, double saldo, double saque, double deposito) {
+        this.numero = numero;
+        this.agencia = agencia;
+        this.banco = banco;
+        this.saldo = saldo;
+        this.saque = saque;
+        this.deposito = deposito;
     }
 
-    public void setNumero(int numero) {
-        this.numero = numero;
+    public String getBanco() {
+        return banco;
+    }
+    public int getNumero() {
+        return numero;
     }
 
     public int getAgencia() {
         return agencia;
     }
 
-    public abstract double getSaque();
-
-    public abstract double getDeposito();
-
-    public void setAgencia(int agencia) {
-        this.agencia = agencia;
-    }
-
-    public String getBanco() {
-        return banco;
-    }
-
     public void setBanco(String banco) {
         this.banco = banco;
     }
-
-    public abstract double getSaldo();
+    public void setAgencia(int agencia) {
+        this.agencia = agencia;
+    }
 
     public void setSaldo(double saldo) {
         this.saldo = saldo;
@@ -48,14 +44,8 @@ public  abstract class Conta {
     public void setDeposito(double deposito) {
         this.deposito = deposito;
     }
-
-    public Conta(int numero, int agencia, String banco, double saldo, double saque, double deposito) {
+    public void setNumero(int numero) {
         this.numero = numero;
-        this.agencia = agencia;
-        this.banco = banco;
-        this.saldo = saldo;
-        this.saque = saque;
-        this.deposito = deposito;
     }
 
     @Override
@@ -69,5 +59,11 @@ public  abstract class Conta {
                 ", deposito=" + deposito +
                 '}';
     }
+
+    public abstract double getSaldo();
+
+    public abstract double getSaque();
+
+    public abstract double getDeposito();
 
 }

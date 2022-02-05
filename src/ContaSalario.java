@@ -10,27 +10,25 @@ public class ContaSalario extends Conta {
     }
 
     public int getQtdSaque() {
-        return qtdSaque;
+        return this.qtdSaque;
     }
 
-    public void setQtdSaque(int qtdSaque) {
-        this.qtdSaque = qtdSaque;
-    }
+    public void getSaldo(double saldo) {
+            this.saldo = saldo;
+        }
 
     @Override
     public double getSaque() {
-        return 0;
+       return this.saldo-this.saque;
     }
 
     @Override
     public double getDeposito() {
-        return 0;
+        return this.deposito;
     }
-
-
     @Override
     public double getSaldo() {
-        return 0;
+        return this.saldo;
     }
 
     @Override
@@ -39,5 +37,4 @@ public class ContaSalario extends Conta {
                 "qtdSaque=" + qtdSaque +
                 '}';
     }
-
 }
