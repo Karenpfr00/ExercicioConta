@@ -9,10 +9,6 @@ public class ContaSalario extends Conta {
 
     }
 
-    public int getQtdSaque() {
-        return this.qtdSaque;
-    }
-
     public void getSaldo(double saldo) {
             this.saldo = saldo;
         }
