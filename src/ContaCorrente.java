@@ -2,9 +2,13 @@ public class ContaCorrente extends Conta {
     private double chequeEspecial;
 
 
-    public ContaCorrente(int numero, int agencia, String banco, double saldo, double chequeEspecial, double saque, double deposito) {
-        super(numero, agencia, banco, saldo, saque, deposito);
+    public ContaCorrente(int numero, int agencia, String banco, double saldo, double chequeEspecial, double sacar, double depositar) {
+        super(numero, agencia, banco, saldo, sacar, depositar);
         this.chequeEspecial = chequeEspecial;
+    }
+
+    public double getChequeEspecial() {
+        return chequeEspecial;
     }
 
     @Override
@@ -15,13 +19,13 @@ public class ContaCorrente extends Conta {
     }
 
     @Override
-    public double getSaque() {
-        return this.saldo-this.saque;
+    public double getSacar() {
+        return this.saldo-this.sacar;
     }
 
     @Override
-    public double getDeposito() {
-        return this.saldo+this.deposito;
+    public double getDepositar() {
+        return this.saldo+this.depositar;
     }
 
     @Override

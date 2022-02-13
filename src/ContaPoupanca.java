@@ -2,20 +2,20 @@ public class ContaPoupanca extends Conta {
     private int diaAniversario;
     private double taxaDeJuros;
 
-    public ContaPoupanca(int numero, int agencia, String banco, double saldo, int diaAniversario, double taxaDeJuros, double saque, double deposito) {
-        super(numero, agencia, banco, saldo, saque, deposito);
+    public ContaPoupanca(int numero, int agencia, String banco, double saldo, int diaAniversario, double taxaDeJuros, double sacar, double depositar) {
+        super(numero, agencia, banco, saldo, sacar, depositar);
         this.diaAniversario = diaAniversario;
         this.taxaDeJuros = taxaDeJuros;
     }
 
     @Override
-    public double getSaque() {
-        return this.saldo-this.saque;
+    public double getSacar() {
+        return this.saldo-this.sacar;
     }
 
     @Override
-    public double getDeposito() {
-        return this.saldo+this.deposito;
+    public double getDepositar() {
+        return this.saldo+this.depositar;
     }
 
     @Override

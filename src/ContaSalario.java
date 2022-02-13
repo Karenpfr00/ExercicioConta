@@ -3,8 +3,8 @@ public class ContaSalario extends Conta {
 
 
 
-    public ContaSalario(int numero, int agencia, String banco, double saldo, double saque, int qtdSaque, double deposito){
-        super(numero, agencia, banco, saldo, saque, deposito);
+    public ContaSalario(int numero, int agencia, String banco, double saldo, double sacar, int qtdSaque, double depositar){
+        super(numero, agencia, banco, saldo, sacar, depositar);
         this.qtdSaque = qtdSaque;
 
     }
@@ -13,24 +13,23 @@ public class ContaSalario extends Conta {
             this.saldo = saldo;
         }
 
-    @Override
-    public double getSaque() {
-       return this.saldo-this.saque;
+    public int getQtdSaque() {
+        return qtdSaque;
     }
 
     @Override
-    public double getDeposito() {
-        return this.deposito;
+    public double getSacar() {
+       return this.saldo-this.sacar;
+    }
+
+    @Override
+    public double getDepositar() {
+        return this.depositar;
     }
     @Override
     public double getSaldo() {
         return this.saldo;
     }
 
-    @Override
-    public String toString() {
-        return "ContaSalario{" +
-                "qtdSaque=" + qtdSaque +
-                '}';
-    }
+
 }
