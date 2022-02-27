@@ -5,8 +5,19 @@ public class TestaConta {
 
             System.out.println("Disponível de cheque especial: "+ cc1.getChequeEspecial());
             System.out.println("O saldo da conta corrente é R$ " +cc1.getSaldo());
+            System.out.println("Valor de depósito R$ " + cc1.getDepositar());
             System.out.println("Valor de saque é R$ " +cc1.sacar);
-            System.out.println("Valor máximo de depósito por dia é de R$ " + cc1.depositar);
+
+
+            double sacar = cc1.getSacar();
+            double saldo = cc1.getSaldo();
+
+            if(sacar<=saldo){
+                System.out.println( "Saque efetuado com sucesso");
+            }
+            else{
+                System.out.println("Valor de saque indisponível");
+            }
             
 
             System.out.println("-------------------------------------------------");
@@ -15,13 +26,21 @@ public class TestaConta {
             System.out.println("Informações da Conta Poupança");
             System.out.println("O saldo da conta poupança é R$ " +p1.getSaldo());
             System.out.println("Valor de saque é R$ " +p1.sacar);
-            System.out.println("Valor máximo de depósito por dia é de R$ " +p1.depositar);
+            System.out.println("Valor de depósito  R$ " +p1.getDepositar());
 
             System.out.println("-------------------------------------------------------");
-            ContaSalario cs1 = new ContaSalario(33,3,"Banco CCC", 1230.00,1230.00,5, 0);
+            ContaSalario cs1 = new ContaSalario(33,3,"Banco CCC", 1230.00,1230.00,2, 0);
             System.out.println("Informações da Conta Salário");
             System.out.println("O saldo da conta é R$ " + cs1.saldo);
-            System.out.println("Quantidade de saques disponiveis por mês: " +cs1.getQtdSaque());
+
+            int qtdSaque = 3;
+
+            if(qtdSaque <=2){
+                System.out.println("Saque relizado com sucesso");
+            }
+            else{
+                System.out.println("Quantidade de saque excedido");
+            }
 
         }
 }
