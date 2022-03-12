@@ -1,36 +1,43 @@
 public class ContaCorrente extends Conta {
-    private double chequeEspecial;
+    private final double valorInicialChequeEspecial;
+    private double valorChequeEspecial;
+    private Math Match;
 
-
-    public ContaCorrente(int numero, int agencia, String banco, double saldo, double chequeEspecial, double sacar, double depositar) {
-        super(numero, agencia, banco, saldo, sacar, depositar);
-        this.chequeEspecial = chequeEspecial;
+    public ContaCorrente(double valorInicialChequeEspecial) {
+        this.valorInicialChequeEspecial = valorInicialChequeEspecial;
     }
 
-    public double getChequeEspecial() {
-        return chequeEspecial;
+    public double sacar(double valor) {
+        System.out.println("Tentando sacar: " + valor);
+        if (valor <= (getSaldo() + valorChequeEspecial)) {
+            setSaldo(getSaldo() - valor);
+            System.out.println("Saldo atual: " + getSaldo());
+
+            if (getSaldo() < 0) {
+                System.out.println("Valor restante do cheque especial: " + getvalorChequeEspecial());
+            }
+            return valor;
+        } else {
+            System.out.println("Você não tem valor de cheque especial disponível para esse saque.");
+        }
+        return 0.0;
     }
 
-    @Override
-    public String toString() {
-        return "ContaCorrente{" +
-                "chequeEspecial=" + chequeEspecial +
-                '}';
+    public double depositar(double valor) {
+        System.out.println("Depositando: " + valor);
+        setSaldo(getSaldo() + valor);
+        System.out.println("Saldo atual: " + getSaldo());
+
+        return valor;
     }
 
-    @Override
-    public double getSacar() {
-        return this.saldo-this.sacar;
-    }
+    private double getvalorChequeEspecial() {
+        double valorChequeEspecial = 100;
+        if (getSaldo() < 0)
+            return valorChequeEspecial - Match.abs(getSaldo());
+        else
+            return valorChequeEspecial;
 
-    @Override
-    public double getDepositar() {
-        return this.saldo+this.depositar + this.chequeEspecial;
-    }
 
-    @Override
-    public double getSaldo(){
-        return this.chequeEspecial + this.saldo;
     }
 }
-
