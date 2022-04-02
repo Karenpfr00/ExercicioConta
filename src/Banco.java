@@ -2,11 +2,25 @@ import java.util.List;
 
 
 public class Banco {
-
+    double SomaDasContas;
     private List<ContaCorrente> ccList;
     private List<ContaPJ> pjList;
     private List<ContaSalario> csList;
     private List<ContaPoupanca> cpList;
+
+    public Banco(double somaDasContas) {
+        SomaDasContas = somaDasContas;
+    }
+
+    public double getSomaDasContas() {
+        return SomaDasContas;
+    }
+
+    public void setSomaDasContas(double somaDasContas) {
+        SomaDasContas = somaDasContas;
+    }
+
+
 
 
 
