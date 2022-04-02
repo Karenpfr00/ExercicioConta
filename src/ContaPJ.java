@@ -1,10 +1,19 @@
 public class ContaPJ extends Conta{
     private int emissaoDeBoleto;
     private Math Match;
+    private double capitalInvestido;
 
-
-    public ContaPJ(int emissaoDeBoleto) {
+    public ContaPJ(int emissaoDeBoleto, double capitalInvestido) {
         this.emissaoDeBoleto = emissaoDeBoleto;
+        this.capitalInvestido = capitalInvestido;
+    }
+
+    public double getCapitalInvestido() {
+        return capitalInvestido;
+    }
+
+    public void setCapitalInvestido(double capitalInvestido) {
+        this.capitalInvestido = capitalInvestido;
     }
 
     public int getEmissaoDeBoleto(int i) {
@@ -36,13 +45,19 @@ public class ContaPJ extends Conta{
             return qtdEmissao;
     }
 
-    @Override
     public double sacar(double valor) {
-        return 0;
+        System.out.println("Sacando: " + valor);
+        setSaldo(getSaldo() - valor);
+        System.out.println("Saldo atual: " + (capitalInvestido-getSaldo()));
+        return valor;
+
     }
 
-    @Override
-    public double depositar(double valor) {
-        return 0;
+    public double depositar(double valor){
+        System.out.println("Deposito de : " + valor);
+        setSaldo(getSaldo() + valor);
+        System.out.println("Saldo atual: " + (capitalInvestido+getSaldo()));
+        return valor;
+
     }
 }
