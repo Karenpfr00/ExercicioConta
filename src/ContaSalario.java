@@ -22,4 +22,8 @@ public class ContaSalario extends Conta {
         return valor;
         }
 
+
+    //public double getImposto(){
+           //calculo do imposto
+
 }
