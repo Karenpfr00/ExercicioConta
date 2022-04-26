@@ -55,6 +55,7 @@ public class TestaConta {
         System.out.println(menosCompras);
         System.out.println("--------------------");
 
+        System.out.println(clientes.stream().mapToDouble(Cliente::getCompras).average().getAsDouble());
 
 
     }
